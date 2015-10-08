@@ -14,6 +14,7 @@ namespace Model
     public class Applyorder
     {
 
+
         /// <summary>
         /// 申配号
         /// </summary>
