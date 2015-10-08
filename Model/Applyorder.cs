@@ -8,7 +8,7 @@ using System.Runtime.Serialization;
 namespace Model
 {
     /// <summary>
-    /// 申配单
+    /// 申配单   
     /// </summary>
     [DataContract]
     public class Applyorder
