@@ -12,6 +12,7 @@ namespace Model
     [DataContract]
     public class Warehouse
     {
+
         /// <summary>
         /// 仓库编号
         /// </summary>
