@@ -40,9 +40,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CustomerBLL.cs" />
+    <Compile Include="BLLImpl\CustomerBLL.cs" />
+    <Compile Include="IBLL\IBaseBLL.cs" />
+    <Compile Include="IBLL\ICustomerBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="wx.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{ced41d66-aa91-4c84-b765-10f0e24ad14c}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{c63218c9-c8ff-4990-bce6-4a6ea8ecd535}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
