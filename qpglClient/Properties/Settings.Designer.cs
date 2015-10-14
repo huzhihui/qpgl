@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace qcgl.Properties
+namespace qpglClient.Properties
 {
 
 
