@@ -24,23 +24,6 @@ namespace qpglClient
         {
             InitializeComponent();
         }
-
-        private void close_btn_Click(object sender, RoutedEventArgs e)
-        {
-            Application.Current.Shutdown();
-            base.OnClosed(e);
-        }
-
-        private void titleG_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            this.DragMove();
-        }
-
-        private void Grid_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            this.DragMove();
-        }
-
         private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             this.DragMove();
