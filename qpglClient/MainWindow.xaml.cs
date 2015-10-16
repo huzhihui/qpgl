@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using qpglClient.SubWindows;
+using Xceed.Wpf.AvalonDock;
+using Xceed.Wpf.AvalonDock.Layout;
 
 namespace qpglClient
 {
@@ -27,6 +30,38 @@ namespace qpglClient
         private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             this.DragMove();
+        }
+
+        private void open_Click(object sender, RoutedEventArgs e)
+        {
+            Frame _frame = new Frame();
+            _frame.Content = Page1.getIndexPage();
+            LayoutDocument layoutDoc = new LayoutDocument() { Title="测试而已"};
+            layoutDoc.Content = _frame;
+            if (!isActive(layoutDoc))
+            {
+                mainShowSpace.Children.Add(layoutDoc);
+            }
+
+            
+
+        }
+        private Boolean isActive(LayoutDocument layoutDoc)
+        {
+            Boolean flg = false;
+            foreach (var i in mainShowSpace.Children)
+            {
+                if(layoutDoc.Title== ((LayoutDocument)i).Title)
+                {
+                  if (!((LayoutDocument)i).IsActive)
+                  {
+                      ((LayoutDocument)i).IsActive = true;
+                  }
+                  flg = true;
+                  break;
+                }
+            }
+            return flg;
         }
     }
 }
