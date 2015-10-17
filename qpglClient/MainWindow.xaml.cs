@@ -15,7 +15,7 @@ using System.Windows.Shapes;
 using qpglClient.SubWindows;
 using Xceed.Wpf.AvalonDock;
 using Xceed.Wpf.AvalonDock.Layout;
-
+using qpglClient.UserControls;
 namespace qpglClient
 {
     /// <summary>
@@ -42,10 +42,8 @@ namespace qpglClient
             {
                 mainShowSpace.Children.Add(layoutDoc);
             }
-
-            
-
         }
+
         private Boolean isActive(LayoutDocument layoutDoc)
         {
             Boolean flg = false;

@@ -4,6 +4,7 @@
         xmlns:d="http://s        chemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:qpglClient"
+        xmlns:userControls="clr-namespace:qpglClient.UserControls"
         xmlns:xcad="http://schemas.xceed.com/wpf/xaml/avalondock" xmlns:d1="http://schemas.microsoft.com/expression/blend/2008" x:Class="qpglClient.MainWindow"
         xmlns:avalonDock="http://schemas.xceed.com/wpf/xaml/avalondock"
         mc:Ignorable="d d1"
@@ -40,15 +41,18 @@
                     <avalonDock:LayoutPanel>
                         <avalonDock:LayoutAnchorablePane DockWidth="250" Name="mianMenu">
                             <avalonDock:LayoutAnchorable Title="管理主菜单"   CanClose="False" PreviousContainerIndex="0">
-                                <Grid></Grid>
+                                <Grid>
+                                    <StackPanel>
+                                        <userControls:UserControl1></userControls:UserControl1>
+                                        <userControls:UserControl1></userControls:UserControl1>
+                                        
+                                    </StackPanel>
+                                </Grid>
                             </avalonDock:LayoutAnchorable>
                         </avalonDock:LayoutAnchorablePane>
                         <avalonDock:LayoutDocumentPaneGroup>
                             <avalonDock:LayoutDocumentPane x:Name="mainShowSpace">
-                                <avalonDock:LayoutDocument Title="Doc1">
-                                    <TextBox/>
-                                </avalonDock:LayoutDocument>
-                                <avalonDock:LayoutDocument Title="Doc2">
+                                <avalonDock:LayoutDocument Title="">
                                     <TextBox/>
                                 </avalonDock:LayoutDocument>
                             </avalonDock:LayoutDocumentPane>
