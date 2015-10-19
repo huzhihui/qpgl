@@ -9,6 +9,76 @@
         xmlns:avalonDock="http://schemas.xceed.com/wpf/xaml/avalondock"
         mc:Ignorable="d d1"
         Title="机油汇" Height="700" Width="1080" WindowStartupLocation="CenterScreen" MouseLeftButtonDown="Window_MouseLeftButtonDown" Background="White" MinWidth="1080" MinHeight="700">
+    <Window.Resources>
+        <Style x:Key="FocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" SnapsToDevicePixels="true" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" StrokeThickness="1" StrokeDashArray="1 2"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD"/>
+        <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1"/>
+        <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC4E5F6"/>
+        <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B"/>
+        <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
+        <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
+        <Style x:Key="menuListBtn" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualStateGroup.Transitions>
+                                        <VisualTransition From="Normal" GeneratedDuration="0:0:0.3" To="MouseOver"/>
+                                        <VisualTransition From="MouseOver" GeneratedDuration="0:0:0.3" To="Normal"/>
+                                    </VisualStateGroup.Transitions>
+                                    <VisualState x:Name="Normal"/>
+                                    <VisualState x:Name="MouseOver">
+                                        <Storyboard>
+                                            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="rectangle">
+                                                <EasingColorKeyFrame KeyTime="0" Value="#FF5151EA"/>
+                                            </ColorAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Pressed">
+                                        <Storyboard>
+                                            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="rectangle">
+                                                <EasingColorKeyFrame KeyTime="0" Value="#FF3D3DFB"/>
+                                            </ColorAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Disabled"/>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Rectangle x:Name="rectangle" Fill="#FF8181E2" Margin="0" Stroke="Black" RadiusX="5" RadiusY="5" StrokeThickness="0"/>
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true"/>
+                            <Trigger Property="IsMouseOver" Value="true"/>
+                            <Trigger Property="IsPressed" Value="true"/>
+                            <Trigger Property="IsEnabled" Value="false"/>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
 
     <Grid Background="White" >
         <Grid.RowDefinitions>
@@ -39,13 +109,33 @@
                 </avalonDock:DockingManager.Theme>
                 <avalonDock:LayoutRoot>
                     <avalonDock:LayoutPanel>
-                        <avalonDock:LayoutAnchorablePane DockWidth="250" Name="mianMenu">
+                        <avalonDock:LayoutAnchorablePane DockWidth="230" Name="mianMenu">
                             <avalonDock:LayoutAnchorable Title="管理主菜单"   CanClose="False" PreviousContainerIndex="0">
                                 <Grid>
                                     <StackPanel>
-                                        <userControls:UserControl1></userControls:UserControl1>
-                                        <userControls:UserControl1></userControls:UserControl1>
-                                        
+                                        <Expander x:Name="expander" Header="配件管理">
+                                            <Grid Background="White" Height="122.76">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="35*"/>
+                                                    <RowDefinition Height="5*"/>
+                                                    <RowDefinition Height="35*"/>
+                                                    <RowDefinition Height="5*"/>
+                                                    <RowDefinition Height="35*"/>
+                                                    <RowDefinition Height="7*"/>
+                                                </Grid.RowDefinitions>
+                                                <Button x:Name="PageTypeBtn" Content="配件类型管理" Style="{DynamicResource menuListBtn}" FontFamily="Microsoft YaHei" FontSize="16" Foreground="White" d1:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin" Click="PageTypeBtn_Click"/>
+                                                <Button x:Name="button1" Content="配件增删改管理" Margin="0,0,0,1" Grid.Row="2" Style="{DynamicResource menuListBtn}" FontSize="16" Foreground="White" d1:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin"/>
+                                                <Button x:Name="button2" Content="配件查询" Grid.Row="4" Style="{DynamicResource menuListBtn}" Background="#FFE0E0E0" Foreground="White" FontSize="16" d1:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin"/>
+                                            </Grid>
+                                        </Expander>
+                                        <Expander x:Name="expander1" Header="人员管理">
+                                            <Grid Background="#FFE5E5E5"/>
+                                        </Expander>
+                                        <Expander x:Name="expander2" Header="客户管理">
+                                            <Grid Background="#FFE5E5E5"/>
+                                        </Expander>
+
+
                                     </StackPanel>
                                 </Grid>
                             </avalonDock:LayoutAnchorable>

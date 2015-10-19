@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace qpglClient.UserControls
+namespace qpglClient.SubWindows
 {
     /// <summary>
-    /// UserControl1.xaml 的交互逻辑
+    /// PartsTypePage.xaml 的交互逻辑
     /// </summary>
-    public partial class UserControl1 : UserControl
+    public partial class PartsTypePage : Page
     {
-        public UserControl1()
+        public PartsTypePage()
         {
             InitializeComponent();
         }

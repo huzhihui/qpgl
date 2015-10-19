@@ -15,7 +15,6 @@ using System.Windows.Shapes;
 using qpglClient.SubWindows;
 using Xceed.Wpf.AvalonDock;
 using Xceed.Wpf.AvalonDock.Layout;
-using qpglClient.UserControls;
 namespace qpglClient
 {
     /// <summary>
@@ -60,6 +59,19 @@ namespace qpglClient
                 }
             }
             return flg;
+        }
+
+        private void PageTypeBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Frame _frame = new Frame();
+            _frame.Content = new PartsTypePage();
+            LayoutDocument layoutDoc = new LayoutDocument() { Title = "配件类型管理" };
+            layoutDoc.Content = _frame;
+            layoutDoc.IsActive = true;
+            if (!isActive(layoutDoc))
+            {
+                mainShowSpace.Children.Add(layoutDoc);
+            }
         }
     }
 }
