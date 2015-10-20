@@ -4,50 +4,25 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:qpglClient.SubWindows"
+      xmlns:userControls="clr-namespace:qpglClient.UserControls"
       mc:Ignorable="d" 
       d:DesignHeight="300"
       Title="PartsTypePage" Height="Auto" MinWidth="750" MinHeight="500" Background="White">
-
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="32*"/>
+            <ColumnDefinition Width="43*"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition Height="19*"/>
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="180*"/>
-            <ColumnDefinition/>
-            <ColumnDefinition Width="194*"/>
-        </Grid.ColumnDefinitions>
-        <StackPanel Grid.RowSpan="2" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin">
-            <Label x:Name="label" Content="已存在配件类型：" Height="25"/>
-
+        <userControls:PageToolsMenu d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin"/>
+        <StackPanel Grid.Row="1" Grid.ColumnSpan="2">
+            <Grid Height="25" Background="#FFE0E0C9">
+                <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Width="235"/>
+            </Grid>
         </StackPanel>
-        <Label x:Name="label1" Content="类型操作区:" Grid.Column="2" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin"/>
-        <Grid Grid.Column="2" Grid.Row="1" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="82*"/>
-                <ColumnDefinition Width="153*"/>
-                <ColumnDefinition Width="75*"/>
-                <ColumnDefinition Width="75*"/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="8*"/>
-                <RowDefinition Height="6*"/>
-                <RowDefinition Height="6*"/>
-                <RowDefinition Height="6*"/>
-                <RowDefinition Height="69*"/>
-            </Grid.RowDefinitions>
-            <Label x:Name="label2" Content="当前类型：" Grid.Row="1" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin"/>
-            <Label x:Name="label2_Copy" Content="增加子类型：" Grid.Row="2" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin"/>
-            <Label x:Name="label2_Copy1" Content="空闲：" Grid.Row="3" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin"/>
-            <TextBox x:Name="textBox" Grid.Column="1" Grid.Row="1" TextWrapping="Wrap" VerticalContentAlignment="Center" Style="{DynamicResource normalTextbox}" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin"/>
-            <TextBox x:Name="textBox_Copy" Grid.Column="1" Grid.Row="2" TextWrapping="Wrap" VerticalContentAlignment="Center" Style="{DynamicResource normalTextbox}" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin"/>
-            <TextBox x:Name="textBox_Copy1" Grid.Column="1" Grid.Row="3" TextWrapping="Wrap" VerticalContentAlignment="Center" Style="{DynamicResource normalTextbox}" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin"/>
-            <Button x:Name="button" Content="修改" Grid.Column="2" Grid.Row="1" Style="{DynamicResource warnBtn}" Foreground="White" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin"/>
-            <Button x:Name="button_Copy" Content="删除" Grid.Column="3" Grid.Row="1" Style="{DynamicResource errorBtn}" Foreground="White" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin"/>
-            <Button x:Name="PartsTypeAdd" Content="增加" Grid.Column="2" Grid.Row="2" Style="{DynamicResource normalBtn}" Foreground="White" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin" Click="PartsTypeAdd_Click"/>
-        </Grid>
-        <Grid Grid.Column="1" Grid.RowSpan="2" Background="#FFC9C9C9" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin"/>
 
     </Grid>
 </Page>

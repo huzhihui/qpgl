@@ -4,30 +4,26 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:qpglClient.SubWindows"
+      xmlns:userControls="clr-namespace:qpglClient.UserControls"
       mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="300"
       Title="PartstypeEditor" MinWidth="750" MinHeight="500">
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="8*"/>
-            <ColumnDefinition Width="8*"/>
-            <ColumnDefinition Width="9*"/>
-            <ColumnDefinition Width="6*"/>
-            <ColumnDefinition Width="19*"/>
+            <ColumnDefinition Width="24*"/>
+            <ColumnDefinition Width="24*"/>
+            <ColumnDefinition Width="27*"/>
+            <ColumnDefinition Width="18*"/>
+            <ColumnDefinition Width="15*"/>
+            <ColumnDefinition Width="14*"/>
+            <ColumnDefinition Width="14*"/>
+            <ColumnDefinition Width="14*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition Height="19*"/>
         </Grid.RowDefinitions>
-        <ComboBox x:Name="comboBox" BorderBrush="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="White" Grid.Column="1" Margin="2,2,2,0">
-            <ComboBoxItem Content="ComboBoxItem"/>
-            <ComboBoxItem Content="ComboBoxItem"/>
-            <ComboBoxItem Content="ComboBoxItem"/>
-        </ComboBox>
-        <Label x:Name="label" Content="查询类型选择：" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Margin="2,2,0,0"/>
-        <TextBox x:Name="textBox" Grid.Column="2" Margin="0,0,0,-2" TextWrapping="Wrap" Text="TextBox" VerticalContentAlignment="Center" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin" Style="{DynamicResource normalTextbox}"/>
-        <Button x:Name="button" Content="搜索" Grid.Column="3" Style="{DynamicResource normalBtn}" Foreground="White" FontSize="13.333"/>
-
+        <userControls:PageToolsMenu Grid.ColumnSpan="3" Margin="0,0,55,0"></userControls:PageToolsMenu>
     </Grid>
 </Page>
