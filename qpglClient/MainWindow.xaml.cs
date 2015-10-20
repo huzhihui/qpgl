@@ -48,14 +48,14 @@ namespace qpglClient
             Boolean flg = false;
             foreach (var i in mainShowSpace.Children)
             {
-                if(layoutDoc.Title== ((LayoutDocument)i).Title)
+                ((LayoutDocument)i).IsActive = false;
+                if (layoutDoc.Title== ((LayoutDocument)i).Title)
                 {
                   if (!((LayoutDocument)i).IsActive)
                   {
                       ((LayoutDocument)i).IsActive = true;
                   }
                   flg = true;
-                  break;
                 }
             }
             return flg;
@@ -66,6 +66,19 @@ namespace qpglClient
             Frame _frame = new Frame();
             _frame.Content = new PartsTypePage();
             LayoutDocument layoutDoc = new LayoutDocument() { Title = "配件类型管理" };
+            layoutDoc.Content = _frame;
+            layoutDoc.IsActive = true;
+            if (!isActive(layoutDoc))
+            {
+                mainShowSpace.Children.Add(layoutDoc);
+            }
+        }
+
+        private void PartstypeEditorBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Frame _frame = new Frame();
+            _frame.Content = new PartstypeEditor();
+            LayoutDocument layoutDoc = new LayoutDocument() { Title = "配件详情管理" };
             layoutDoc.Content = _frame;
             layoutDoc.IsActive = true;
             if (!isActive(layoutDoc))

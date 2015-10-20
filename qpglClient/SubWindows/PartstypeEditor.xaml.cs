@@ -16,22 +16,13 @@ using System.Windows.Shapes;
 namespace qpglClient.SubWindows
 {
     /// <summary>
-    /// PartsTypePage.xaml 的交互逻辑
+    /// PartstypeEditor.xaml 的交互逻辑
     /// </summary>
-    public partial class PartsTypePage : Page
+    public partial class PartstypeEditor : Page
     {
-        public PartsTypePage()
+        public PartstypeEditor()
         {
             InitializeComponent();
-        }
-        /// <summary>
-        /// 增加商品类型
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void PartsTypeAdd_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

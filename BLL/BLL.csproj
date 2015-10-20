@@ -41,8 +41,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLLImpl\CustomerBLL.cs" />
+    <Compile Include="BLLImpl\PartstypeBLL.cs" />
     <Compile Include="IBLL\IBaseBLL.cs" />
     <Compile Include="IBLL\ICustomerBLL.cs" />
+    <Compile Include="IBLL\IPartstypeBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
