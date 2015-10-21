@@ -103,7 +103,7 @@
             </Menu>
         </WrapPanel>
         <Grid Grid.Row="1">
-            <avalonDock:DockingManager x:Name="dockingManager">
+            <avalonDock:DockingManager x:Name="dockingManager" Background="White">
                 <avalonDock:DockingManager.Theme>
                     <avalonDock:MetroTheme/>
                 </avalonDock:DockingManager.Theme>
@@ -123,7 +123,7 @@
                                                     <RowDefinition Height="35*"/>
                                                     <RowDefinition Height="7*"/>
                                                 </Grid.RowDefinitions>
-                                                <Button x:Name="PageTypeBtn" Content="配件类型管理" Style="{DynamicResource menuListBtn}" FontFamily="Microsoft YaHei" FontSize="13.333" Foreground="White" d1:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin" Click="PageTypeBtn_Click"/>
+                                                <Button x:Name="PageTypeBtn" Content="配件类型管理" Style="{DynamicResource menuListBtn}" FontFamily="Microsoft YaHei" FontSize="13.333" Foreground="White" d1:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin" Click="PageTypeBtn_Click" Background="#FFFBFBFB"/>
                                                 <Button x:Name="PartstypeEditorBtn" Content="配件增删改管理" Margin="0,0,0,1" Grid.Row="2" Style="{DynamicResource menuListBtn}" FontSize="13.333" Foreground="White" d1:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin" Click="PartstypeEditorBtn_Click"/>
                                                 <Button x:Name="button2" Content="配件查询" Grid.Row="4" Style="{DynamicResource menuListBtn}" Background="#FFE0E0E0" Foreground="White" FontSize="13.333" d1:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin"/>
                                             </Grid>
@@ -143,7 +143,9 @@
                         <avalonDock:LayoutDocumentPaneGroup>
                             <avalonDock:LayoutDocumentPane x:Name="mainShowSpace">
                                 <avalonDock:LayoutDocument Title="">
-                                    <TextBox/>
+                                    <TextBox>
+                                        
+                                    </TextBox>
                                 </avalonDock:LayoutDocument>
                             </avalonDock:LayoutDocumentPane>
                         </avalonDock:LayoutDocumentPaneGroup>
