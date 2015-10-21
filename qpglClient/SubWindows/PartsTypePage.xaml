@@ -19,9 +19,7 @@
         </Grid.RowDefinitions>
         <userControls:PageToolsMenu d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin"/>
         <StackPanel Grid.Row="1" Grid.ColumnSpan="2">
-            <Grid Height="25" Background="#FFE0E0C9">
-                <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Width="235"/>
-            </Grid>
+            <Grid Height="25" Background="#FFE0E0C9"/>
         </StackPanel>
 
     </Grid>
